@@ -8,7 +8,9 @@ import {
 import { CreateService } from "./create.service";
 import { CreateDto } from "features/create/create.dto";
 import { validate } from "class-validator";
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("Create Product")
 @Controller("api")
 export class CreateHttpController {
   constructor(private createService: CreateService) {}

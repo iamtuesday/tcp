@@ -1,0 +1,4 @@
+HTTPS Git credentials for AWS CodeCommit 
+
+user roy.cerdan-at-572930221945
+pass arLfQ3kvnlfcFwW+38FlV5ZYd9P//Qjb0tGNtfJmZf4=
