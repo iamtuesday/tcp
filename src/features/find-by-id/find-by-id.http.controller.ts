@@ -3,7 +3,7 @@ import { FindByIdService } from "./findById.service";
 import { FindByIdDto } from "core/dto/find-by-id.dto";
 
 @Controller("api/products")
-export class FindByIdController {
+export class FindByIdHttpController {
   constructor(private readonly findByIdService: FindByIdService) {}
 
   @Get(":id")

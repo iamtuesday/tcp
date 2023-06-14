@@ -1,6 +1,7 @@
+import { UpdateStockService } from "./update-stock.service";
+import { updateStockTcpStock } from "./update-stock.dto";
 export declare class UpdateStockTcpModule {
-    updateStock({ productId, stock }: {
-        productId: any;
-        stock: any;
-    }): Promise<string>;
+    private readonly updateStockService;
+    constructor(updateStockService: UpdateStockService);
+    updateStock(data: updateStockTcpStock): Promise<string>;
 }

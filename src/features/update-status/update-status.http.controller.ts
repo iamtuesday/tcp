@@ -2,7 +2,7 @@ import { Body, Controller, Param, Patch } from "@nestjs/common";
 import { UpdateStatusService } from "./update-status.service";
 
 @Controller("api/products")
-export class UpdateStatusController {
+export class UpdateStatusHttpController {
     constructor(private readonly updateStatusService: UpdateStatusService) {}
 
     @Patch(":id/status")

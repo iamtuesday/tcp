@@ -8,7 +8,7 @@ export class UpdateStatusService {
   async updateStatus(productId: string, status: boolean): Promise<string> {
     try {
       const query = { _id: new ObjectId(productId) };
-      const uptade = { $set: { status } };
+      const uptade = { $set: { isActive: status } };
 
       const result = await this.db
         .collection("products")

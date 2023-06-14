@@ -1,11 +1,12 @@
 import { Module } from "@nestjs/common";
 import { MongodbModule } from "datasources/mongodb/mongodb.module";
-import { FindController } from "./find.controller";
+import { FindHttpController } from "./find.http.controller";
 import { FindService } from "./find.service";
+import { FindTcpController } from "./find.tcp.controller";
 
 @Module({
     imports: [MongodbModule.forRoot("nestdb")],
-    controllers: [FindController],
+    controllers: [FindHttpController, FindTcpController],
     providers: [FindService],
 })
 export class FindModule {}

@@ -10,13 +10,14 @@ exports.CreateModule = void 0;
 const common_1 = require("@nestjs/common");
 const mongodb_module_1 = require("../../datasources/mongodb/mongodb.module");
 const create_service_1 = require("./create.service");
-const create_controller_1 = require("./create.controller");
+const create_http_controller_1 = require("./create.http.controller");
+const create_tcp_controller_1 = require("./create.tcp.controller");
 let CreateModule = exports.CreateModule = class CreateModule {
 };
 exports.CreateModule = CreateModule = __decorate([
     (0, common_1.Module)({
         imports: [mongodb_module_1.MongodbModule.forRoot('nestdb')],
-        controllers: [create_controller_1.CreateController],
+        controllers: [create_http_controller_1.CreateHttpController, create_tcp_controller_1.CreateTcpController],
         providers: [create_service_1.CreateService],
     })
 ], CreateModule);

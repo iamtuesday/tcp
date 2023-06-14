@@ -1,11 +1,12 @@
 import { Module } from "@nestjs/common";
 import { MongodbModule } from "datasources/mongodb/mongodb.module";
 import { CreateService } from "./create.service";
-import { CreateController } from "./create.controller";
+import { CreateHttpController } from "./create.http.controller";
+import { CreateTcpController } from "./create.tcp.controller";
 
 @Module({
     imports: [MongodbModule.forRoot('nestdb')],
-    controllers: [CreateController],
+    controllers: [CreateHttpController, CreateTcpController],
     providers: [CreateService],
 })
 export class CreateModule {}

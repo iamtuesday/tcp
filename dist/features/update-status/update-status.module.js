@@ -9,14 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateStatusModule = void 0;
 const common_1 = require("@nestjs/common");
 const mongodb_module_1 = require("../../datasources/mongodb/mongodb.module");
-const update_status_controller_1 = require("./update-status.controller");
+const update_status_http_controller_1 = require("./update-status.http.controller");
 const update_status_service_1 = require("./update-status.service");
+const update_status_tcp_controller_1 = require("./update-status.tcp.controller");
 let UpdateStatusModule = exports.UpdateStatusModule = class UpdateStatusModule {
 };
 exports.UpdateStatusModule = UpdateStatusModule = __decorate([
     (0, common_1.Module)({
         imports: [mongodb_module_1.MongodbModule.forRoot("nestdb")],
-        controllers: [update_status_controller_1.UpdateStatusController],
+        controllers: [update_status_http_controller_1.UpdateStatusHttpController, update_status_tcp_controller_1.UpdateStatusTcpController],
         providers: [update_status_service_1.UpdateStatusService],
     })
 ], UpdateStatusModule);

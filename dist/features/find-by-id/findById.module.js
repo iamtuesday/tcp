@@ -8,15 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FindByIdModule = void 0;
 const common_1 = require("@nestjs/common");
-const findById_controller_1 = require("./findById.controller");
 const findById_service_1 = require("./findById.service");
 const mongodb_module_1 = require("../../datasources/mongodb/mongodb.module");
+const find_by_id_http_controller_1 = require("./find-by-id.http.controller");
+const find_by_id_tcp_controller_1 = require("./find-by-id.tcp.controller");
 let FindByIdModule = exports.FindByIdModule = class FindByIdModule {
 };
 exports.FindByIdModule = FindByIdModule = __decorate([
     (0, common_1.Module)({
         imports: [mongodb_module_1.MongodbModule.forRoot("nestdb")],
-        controllers: [findById_controller_1.FindByIdController],
+        controllers: [find_by_id_http_controller_1.FindByIdHttpController, find_by_id_tcp_controller_1.FindByIdTcpController],
         providers: [findById_service_1.FindByIdService],
     })
 ], FindByIdModule);

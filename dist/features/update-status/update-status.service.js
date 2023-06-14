@@ -22,7 +22,7 @@ let UpdateStatusService = exports.UpdateStatusService = class UpdateStatusServic
     async updateStatus(productId, status) {
         try {
             const query = { _id: new mongodb_1.ObjectId(productId) };
-            const uptade = { $set: { status } };
+            const uptade = { $set: { isActive: status } };
             const result = await this.db
                 .collection("products")
                 .updateOne(query, uptade);

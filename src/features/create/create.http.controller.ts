@@ -4,14 +4,13 @@ import {
   Body,
   ValidationPipe,
   BadRequestException,
-  UsePipes,
 } from "@nestjs/common";
 import { CreateService } from "./create.service";
 import { CreateDto } from "features/create/create.dto";
 import { validate } from "class-validator";
 
 @Controller("api")
-export class CreateController {
+export class CreateHttpController {
   constructor(private createService: CreateService) {}
 
   @Post("products")
